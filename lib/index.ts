@@ -25,11 +25,8 @@ async function transformExclusions() {
   ]);
 
   await Promise.all([
-    await Bun.write(
-      "dist/amnezia_regular.json",
-      JSON.stringify(regularExclusions)
-    ),
-    await Bun.write(
+    Bun.write("dist/amnezia_regular.json", JSON.stringify(regularExclusions)),
+    Bun.write(
       "dist/amnezia_selective.json",
       JSON.stringify(selectiveExclusions)
     ),
