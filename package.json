@@ -1,0 +1,19 @@
+{
+  "name": "instagram-followers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch run lib/index.ts",
+    "build": "bun run build:clean && bun run build:bun",
+    "build:bun": "bun build lib/index.ts --target=bun --minify --outfile=dist/bundle.js",
+    "build:clean": "rm -rf dist/bundle.js",
+    "start": "bun run dist/bundle.js"
+  },
+  "devDependencies": {
+    "bun-types": "^1.0.28",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}
