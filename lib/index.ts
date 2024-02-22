@@ -9,11 +9,7 @@ async function getUrlListFromFile(filePath: string) {
   const file = await Bun.file(resolvedPath).text();
   return file
     .split("\n")
-    .filter((url) => {
-      if (Boolean(url) && !url.startsWith("*")) {
-        return url;
-      }
-    })
+    .filter(Boolean)
     .sort()
     .map((url) => ({ hostname: url, ip: "" }));
 }
